@@ -1,0 +1,19 @@
+
+
+# Make a tuple containing student marks
+student_marks = (85, 92, 78, 95, 88)
+
+# 1. Print the first and last elements of the tuple
+print("First element:", student_marks[0])
+print("Last element:", student_marks[-1])
+
+# 2. Unpack the tuple into separate variables
+mark1, mark2, mark3, mark4, mark5 = student_marks
+print("Unpacked variables:", mark1, mark2, mark3, mark4, mark5)
+
+# 3. Create a new tuple by adding 5 marks to each element of the original tuple
+new_student_marks = tuple(mark + 5 for mark in student_marks)
+
+# Print both the original and new tuple
+print("Original tuple:", student_marks)
+print("New tuple (after adding 5 marks):", new_student_marks)
