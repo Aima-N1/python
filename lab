@@ -292,3 +292,56 @@ new_student_marks = tuple(mark + 5 for mark in student_marks)
 # Print both the original and new tuple
 print("Original tuple:", student_marks)
 print("New tuple (after adding 5 marks):", new_student_marks)
+
+numbers = [5, 12, 7, 18, 9, 24, 3, 16, 11]
+
+divisible_by_3_count = 0
+even_not_divisible_by_3_count = 0
+odd_not_divisible_by_3_count = 0
+
+for x in numbers:
+  if x % 3 == 0:
+    print(f"{x} is divided by 3")
+    divisible_by_3_count += 1
+  elif x % 2 == 0:
+    print(f"{x} is even but not divisible by 3")
+    even_not_divisible_by_3_count += 1
+  else:
+    print(f"{x} is odd and not divisible by 3")
+    odd_not_divisible_by_3_count += 1
+
+print(f"Numbers divisible by 3: {divisible_by_3_count}")
+print(f"Numbers even (but not divisible by 3): {even_not_divisible_by_3_count}")
+print(f"Numbers odd (but not divisible by 3): {odd_not_divisible_by_3_count}")
+
+
+def classify_numbers(numbers):
+    """
+    Classifies numbers in a list as positive, zero, or negative and counts them.
+
+    Args:
+        numbers: A list of numbers.
+
+    Returns:
+        A dictionary with counts of positive, zero, and negative numbers.
+    """
+    counts = {'positive': 0, 'zero': 0, 'negative': 0}
+    for num in numbers:
+        if num > 0:
+            print(f"{num} is positive")
+            counts['positive'] += 1
+        elif num == 0:
+            print(f"{num} is zero")
+            counts['zero'] += 1
+        else:
+            print(f"{num} is negative")
+            counts['negative'] += 1
+    return counts  # Removed the erroneous dot
+
+# Taking list input from the user
+user_input = input("Enter numbers separated by spaces: ")
+numbers_list = [float(num) for num in user_input.split()]  # Converts input into a list of floats
+
+# Calling the function and printing the result
+result = classify_numbers(numbers_list)
+print("\nCount Summary:", result)
